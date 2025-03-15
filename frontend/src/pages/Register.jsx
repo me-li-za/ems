@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axiosInstance from '../axiosConfig';
 
 const Register = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', password: '' });
+  const [formData, setFormData] = useState({ fname: '', lname: '', email: '', password: '' });
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -23,9 +23,16 @@ const Register = () => {
         <h1 className="text-2xl font-bold mb-4 text-center">Register</h1>
         <input
           type="text"
-          placeholder="Name"
-          value={formData.name}
-          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+          placeholder="First Name"
+          value={formData.fname}
+          onChange={(e) => setFormData({ ...formData, fname: e.target.value })}
+          className="w-full mb-4 p-2 border rounded"
+        />
+         <input
+          type="text"
+          placeholder="Last Name"
+          value={formData.lname}
+          onChange={(e) => setFormData({ ...formData, lname: e.target.value })}
           className="w-full mb-4 p-2 border rounded"
         />
         <input
@@ -33,6 +40,13 @@ const Register = () => {
           placeholder="Email"
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+          className="w-full mb-4 p-2 border rounded"
+        />
+         <input
+          type="text"
+          placeholder="Role"
+          value={formData.role}
+          onChange={(e) => setFormData({ ...formData, role: e.target.value })}
           className="w-full mb-4 p-2 border rounded"
         />
         <input
