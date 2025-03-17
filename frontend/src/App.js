@@ -12,8 +12,9 @@ function App() {
     <Router>
       <Navbar/>
       <Routes>
+        <Route path="/" element={ !user ? <Login /> : <Navigate to="/employees"/>} />
         <Route path="/login" element={ !user ? <Login /> : <Navigate to="/employees"/>} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/register" element={ user ? <Register />: <Navigate to="/login" />} />
         <Route path="/profile" element={user ? <Profile /> : <Navigate to="/login" />} />
         <Route path="/tasks" element={user ? <Tasks /> : <Navigate to="/login" />} />
       </Routes>
