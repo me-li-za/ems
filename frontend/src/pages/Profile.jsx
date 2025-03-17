@@ -59,28 +59,28 @@ const Profile = () => {
     <div className="max-w-md mx-auto mt-20">
       <form onSubmit={handleSubmit} className="bg-white p-6 shadow-md rounded">
         <h1 className="text-2xl font-bold mb-4 text-center">Your Profile</h1>
-        <input
+        <input  
           type="text"
           placeholder="First Name"
           value={formData.fname}
           onChange={(e) => setFormData({ ...formData, fname: e.target.value })}
           className="w-full mb-4 p-2 border rounded"
         />
-         <input
+         <input  
           type="text"
           placeholder="Last Name"
           value={formData.lname}
           onChange={(e) => setFormData({ ...formData, lname: e.target.value })}
           className="w-full mb-4 p-2 border rounded"
         />
-        <input
+        <input  
           type="email"
           placeholder="Email"
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           className="w-full mb-4 p-2 border rounded"
         />
-        <input
+        <input  
           type="text"
           placeholder="Role"
           value={formData.role}
