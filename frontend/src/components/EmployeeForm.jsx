@@ -5,7 +5,7 @@ import axiosInstance from '../axiosConfig';
 
 const EmployeeForm = ({ employees, setEmployees, editingEmployee, setEditingEmployee }) => {
   const { user } = useAuth();
-  const [formData, setFormData] = useState({  title: '', fname: '', lname: '', email: '', role: '', department: '', description: '' });
+  const [formData, setFormData] = useState({  title: '', fname: '', lname: '', email: '', role: '', salary: '', department: '', description: '' });
 
   useEffect(() => {
     if (editingEmployee) {
@@ -15,11 +15,12 @@ const EmployeeForm = ({ employees, setEmployees, editingEmployee, setEditingEmpl
         lname: editingEmployee.lname,
         email: editingEmployee.email,
         role: editingEmployee.role,
+        salary: editingEmployee.salary,
         department: editingEmployee.department,
         description: editingEmployee.description,
       });
     } else {
-      setFormData({  title: '', fname: '', lname: '',  email: '', role: '', department: '', description: '' });
+      setFormData({  title: '', fname: '', lname: '',  email: '', role: '', salary: '', department: '', description: '' });
     }
   }, [editingEmployee]);
 
@@ -39,7 +40,7 @@ const EmployeeForm = ({ employees, setEmployees, editingEmployee, setEditingEmpl
         alert('New Employee Addded');
       }
       setEditingEmployee(null);
-      setFormData({ title: '', fname: '', lname: '', email: '', role: '', department: '',  description: '' });
+      setFormData({ title: '', fname: '', lname: '', email: '', role: '', salary:'', department: '',  description: '' });
     } catch (error) {
       alert('Failed to save employee.');
     }
@@ -94,6 +95,16 @@ const EmployeeForm = ({ employees, setEmployees, editingEmployee, setEditingEmpl
         placeholder="Role"
         value={formData.role}
         onChange={(e) => setFormData({ ...formData, role: e.target.value })}
+        className="w-full mb-4 p-2 border rounded"
+      />
+      <label className='text-xs text-gray-400'>Salary</label>
+       <input required
+        type="text"
+        placeholder="1000.00"
+        inputMode="decimal"
+        autoComplete="off"
+        value={formData.salary}
+        onChange={(e) => setFormData({ ...formData, salary: e.target.value })}
         className="w-full mb-4 p-2 border rounded"
       />
       

@@ -28,6 +28,7 @@ const EmployeeList = ({ employees, setEmployees, setEditingEmployee }) => {
             <div className=" text-wrap"><label className='text-xs text-gray-400 '>Email</label><p className="font-bold break-all">{employee.email}</p></div>
             <div className="  text-wrap"><label className='text-xs text-gray-400'>Department</label><p className="font-bold">{employee.department}</p></div>
             <div className="  text-wrap"><label className='text-xs text-gray-400'>Job Role</label><p className="font-bold">{employee.role}</p></div>
+            <div className=" text-wrap"><label className='text-xs text-gray-400'>Salary</label><p className="font-bold">{employee.salary}</p></div> 
             <div className=" text-wrap"><label className='text-xs text-gray-400'>Job Description</label><p className="font-bold">{employee.description}</p></div>  
             <div className=' ' ><button
                 onClick={() => setEditingEmployee (employee)}

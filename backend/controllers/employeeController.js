@@ -10,10 +10,9 @@ const getEmployees = async (req, res) => {
 
 //add task function
 const addEmployee = async (req, res) => {
-    
-    const { title, fname, lname, email, role, department, description  } = req.body;
+    const { title, fname, lname, email, role, salary, department, description  } = req.body;
     try {
-        const employee = await Employee.create({ userId: req.user.id, title, fname, lname,  email, role, department,
+        const employee = await Employee.create({ userId: req.user.id, title, fname, lname,  email, role, salary, department,
         description  });
         res.status(201).json(employee);
     } catch (error) {
@@ -23,7 +22,7 @@ const addEmployee = async (req, res) => {
 
 //update task
 const updateEmployee = async (req, res) => {
-    const { title, fname, lname, email, role, department, description } = req.body;
+    const { title, fname, lname, email, role, salary, department, description } = req.body;
     try {
         const employee = await Employee.findById(req.params.id);
             if (!employee) return res.status(404).json({ message: 'Employee not found' });
@@ -32,6 +31,7 @@ const updateEmployee = async (req, res) => {
             employee.lname = lname || employee.lname;
             employee.email = email || employee.email;
             employee.role = role || employee.role;
+            employee.salary = salary || employee.salary;
             employee.department = department || employee.department;
             employee.description = description || employee.description;
             const updatedEmployee = await employee.save();
