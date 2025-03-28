@@ -4,10 +4,11 @@ Employee Management System: This system allows HR to  manage the employee inform
 
 ### Tech Stack 
 The system is built using MERN stack
-Mongo DB - NoSQL database for saving data
-Express.js - backend application framework
-React - user interface 
-Node.js - runtime environment
+
+* Mongo DB - NoSQL database for saving data
+* Express.js - backend application framework
+* React - user interface 
+* Node.js - runtime environment
 
 ## Pre-requisite
 You need to have node installed on your localhost. The version should be at least 22
@@ -41,8 +42,9 @@ PORT=5001
     npm start
 ```
 5. The application will launch in a browser with login as the default page.  Use the following credentials to login to the system.
-Email: _admin@mail.com_
-Password: _password_
+
+* Email: _admin@mail.com_
+* Password: _password_
 
 6. To run the unit tests go to the backend folder and run the following command
  ```sh
@@ -81,9 +83,11 @@ For this project the environment name I am using is EC2Aws which has environment
 5. Next step is to create the repository secret, go to Secrets and variables and click on Actions and then "new repository secret"
   Name: PROD
   Value: 
-   ```sh
+```sh
 MONGO_URI=mongodb+srv://svc-mongo-dbuser:CCzVLz3NrZIz1AXP@cluster0.njoga.mongodb.net/db_ems?retryWrites=true&w=majority&appName=Cluster0
 JWT_SECRET=2J8zqkP7VN6bxzg+Wy7DQZsd3Yx8mF3Bl0kch6HYtFs=
 PORT=5001
 ```
-For the Action I configured a self-hosted runner using Linux OS and x64 architecture the name of the runner is: ip-172-31-10-138
+
+**Action**
+For the Action I configured a self-hosted runner using Linux OS and x64 architecture the name of the runner is: **ip-172-31-10-138**
