@@ -13,6 +13,8 @@ const Profile = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    document.title = 'User Profile';
+
     // Fetch profile data from the backend
     const fetchProfile = async () => {
       setLoading(true);

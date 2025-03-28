@@ -12,6 +12,8 @@ const Employees = () => {
   const [editingEmployee, setEditingEmployee] = useState(null);
 
   useEffect(() => {
+    document.title = 'Dashboard';
+
     const fetchEmployees = async () => {
       try {
         const response = await axiosInstance.get('/api/employees', {

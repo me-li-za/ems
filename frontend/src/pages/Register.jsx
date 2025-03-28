@@ -6,6 +6,8 @@ const Register = () => {
   const [formData, setFormData] = useState({ fname: '', lname: '', email: '', password: '' });
   const navigate = useNavigate();
 
+  document.title = 'Add New User';
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
