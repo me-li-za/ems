@@ -1,5 +1,5 @@
 const Employee = require('../models/Employee');
-//read task function
+ 
 const getEmployees = async (req, res) => {
     try {
         const employees = await Employee.find({ userId: req.user.id });
@@ -7,8 +7,7 @@ const getEmployees = async (req, res) => {
     } catch (error) {
     }
 };
-
-//add task function
+ 
 const addEmployee = async (req, res) => {
     const { title, fname, lname, email, role, salary, department, description  } = req.body;
     try {
@@ -19,8 +18,7 @@ const addEmployee = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
-
-//update task
+ 
 const updateEmployee = async (req, res) => {
     const { title, fname, lname, email, role, salary, department, description } = req.body;
     try {
@@ -40,8 +38,7 @@ const updateEmployee = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
-
-//delete task
+ 
 const deleteEmployee = async (req, res) => {
     try {
         const employee = await Employee.findById(req.params.id);
