@@ -33,9 +33,7 @@ You should see the version of the node.js installed, it should print "v22.14.0".
 ```
 3.  Create a .env file in the root folder "ems" and add the following lines and save the file
  ```sh
-MONGO_URI=mongodb+srv://svc-mongo-dbuser:CCzVLz3NrZIz1AXP@cluster0.njoga.mongodb.net/db_ems?retryWrites=true&w=majority&appName=Cluster0
-JWT_SECRET=2J8zqkP7VN6bxzg+Wy7DQZsd3Yx8mF3Bl0kch6HYtFs=
-PORT=5001
+
 ```
 4. To try the system on your localhost you can run the command 
  ```sh
@@ -43,8 +41,6 @@ PORT=5001
 ```
 5. The application will launch in a browser with login as the default page.  Use the following credentials to login to the system.
 
-* Email: _admin@mail.com_
-* Password: _password_
 
 6. To run the unit tests go to the backend folder and run the following command
  ```sh
@@ -72,22 +68,13 @@ For this project the environment name I am using is EC2Aws which has environment
 3. Name the environment EC2Aws 
 4. Add the environment secrets by clicking on "Add Environment Secrets". Here we will configure the 3 values that are used in your .env file, you will have to create the environment secret three times.
 
-    Name of secret: MONGO_URI
-    Value: mongodb+srv://svc-mongo-dbuser:CCzVLz3NrZIz1AXP@cluster0.njoga.mongodb.net/db_ems?retryWrites=true&w=majority&appName=Cluster0
 
-    Name of secret: JWT_SECRET
-    Value: 2J8zqkP7VN6bxzg+Wy7DQZsd3Yx8mF3Bl0kch6HYtFs=
-    
-    Name of secret: PORT
-    Value: 5001
 5. Next step is to create the repository secret, go to Secrets and variables and click on Actions and then "new repository secret"
   Name: PROD
   Value: 
 ```sh
-MONGO_URI=mongodb+srv://svc-mongo-dbuser:CCzVLz3NrZIz1AXP@cluster0.njoga.mongodb.net/db_ems?retryWrites=true&w=majority&appName=Cluster0
-JWT_SECRET=2J8zqkP7VN6bxzg+Wy7DQZsd3Yx8mF3Bl0kch6HYtFs=
-PORT=5001
+
 ```
 
 **Action**
-For the Action I configured a self-hosted runner using Linux OS and x64 architecture the name of the runner is: **ip-172-31-10-138**
+For the Action I configured a self-hosted runner using Linux OS and x64 architecture the name of the runner 
